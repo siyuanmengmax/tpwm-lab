@@ -1,0 +1,211 @@
+{
+  "brand": "TPWM Lab",
+  "personalWebsite": "https://siyuanmengmax.github.io/",
+  "siteUrl": "",
+  "defaultLanguage": "en",
+  "contentReviewed": "2026-10-10",
+  "en": {
+    "title": "TPWM Lab — Transportation Perception & World Modeling",
+    "description": "Transportation-centered research in trustworthy multimodal perception, world modeling, traffic safety, and infrastructure optimization.",
+    "nav": [
+      "Research",
+      "Publications",
+      "People",
+      "Join Us"
+    ],
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "home": "Home",
+    "personal": "PI website",
+    "eyebrow": "TRANSPORTATION × INTELLIGENCE",
+    "heroTitle": "Perceive. Understand.<br><em>Predict. Safeguard.</em>",
+    "fullName": "Transportation Perception & World Modeling Lab",
+    "intro": "We study reliable representations and predictions of traffic environments under heterogeneous, incomplete, and uncertain observations.",
+    "explore": "Explore our research",
+    "students": "Prospective students",
+    "figureLabel": "A CONNECTED RESEARCH VISION",
+    "figureNote": "Conceptual illustration · not experimental data",
+    "figureStages": [
+      "Sensing",
+      "Representation",
+      "World modeling",
+      "Safety"
+    ],
+    "motionPause": "Pause motion",
+    "motionPlay": "Play motion",
+    "researchKicker": "01 / RESEARCH",
+    "researchTitle": "One connected vision.<br>Multiple ways to explore.",
+    "researchIntro": "Three core directions, complemented by a systems perspective. Reliability is the thread that connects them.",
+    "details": "Research questions & starting points",
+    "foundationLabel": "Established foundations",
+    "futureLabel": "Emerging research",
+    "startLabel": "Possible student starting points",
+    "keywordsLabel": "Methods & themes",
+    "philosophyKicker": "THE CONNECTING QUESTION",
+    "philosophyTitle": "How much can we trust<br>what we perceive and predict?",
+    "philosophyIntro": "We connect observation quality, physical dynamics, scene semantics, and uncertainty to transportation questions. The pathway below is a research agenda, not a completed end-to-end system.",
+    "flow": [
+      {
+        "title": "Heterogeneous sensing",
+        "body": "LiDAR · Camera · Radar · UAV · V2X"
+      },
+      {
+        "title": "Quality-aware representation",
+        "body": "Detection · Tracking · Fusion · Uncertainty"
+      },
+      {
+        "title": "Transportation world modeling",
+        "body": "State · Interaction · Physics · Semantics"
+      },
+      {
+        "title": "Safety & system decisions",
+        "body": "Conflict analysis · Risk prediction · Optimization"
+      }
+    ],
+    "reliability": "Across every direction: quality, uncertainty, physical consistency, and reliable evaluation.",
+    "publicationsKicker": "02 / SELECTED PUBLICATIONS",
+    "publicationsTitle": "The work we build on.",
+    "publicationsIntro": "Selected publications of the founding PI, including work completed before the formation of TPWM Lab.",
+    "all": "All work",
+    "journal": "Journals",
+    "vision": "Preprint / Vision",
+    "publicationLink": "Read publication",
+    "fullList": "Full publication list on the PI website",
+    "peopleKicker": "03 / PEOPLE",
+    "peopleTitle": "A research group<br>taking shape.",
+    "joinKicker": "04 / JOIN THE CONVERSATION",
+    "joinTitle": "Bring your questions.<br>Find a research direction.",
+    "joinIntro": "We welcome conversations with students and collaborators interested in the intersection of transportation science and artificial intelligence.",
+    "studentHeading": "For prospective students",
+    "collabHeading": "For collaborators",
+    "studentBody": "Curiosity, quantitative and programming foundations, research integrity, and an interest in real transportation challenges matter. A background in transportation, computer science, AI, automation, vehicle engineering, civil engineering, or mathematics can offer a starting point.",
+    "collabBody": "We are interested in multimodal sensing, road-user interactions, traffic safety, transportation world modeling, and infrastructure decisions. Shared questions and the available data will shape each collaboration.",
+    "joinNotice": "Research inquiries are welcome. Recruitment eligibility, degree programs, positions, and supervision arrangements are subject to university policies and future official announcements. No current opening is advertised here.",
+    "contact": "Connect via the PI website",
+    "pathsTitle": "Possible paths into the research",
+    "paths": [
+      {
+        "title": "AI & computer science",
+        "body": "Detection and tracking → scene representation → interaction-aware prediction"
+      },
+      {
+        "title": "Transportation engineering",
+        "body": "Trajectories and traffic conflicts → uncertainty analysis → reliable safety evaluation"
+      },
+      {
+        "title": "Automation, vehicles & mathematics",
+        "body": "State estimation and dynamics → physical constraints → prediction and optimization"
+      }
+    ],
+    "footerNote": "Transportation Perception & World Modeling Lab · Working research-group identity",
+    "backTop": "Back to top",
+    "copyright": "TPWM Lab · Research website",
+    "searchLabel": "Find a publication",
+    "searchPlaceholder": "Search title, author, or topic…",
+    "resultsLabel": "{count} of {total} works",
+    "noResults": "No publications match this search.",
+    "clearSearch": "Reset search and filters"
+  },
+  "zh": {
+    "title": "TPWM Lab — 交通感知与世界建模研究组",
+    "description": "以交通科学问题为导向，研究可信多模态交通感知、世界建模、交通安全与基础设施优化。",
+    "nav": [
+      "研究方向",
+      "代表成果",
+      "研究成员",
+      "交流合作"
+    ],
+    "skip": "跳转到正文",
+    "menu": "菜单",
+    "home": "首页",
+    "personal": "个人主页",
+    "eyebrow": "交通科学 × 人工智能",
+    "heroTitle": "感知交通，理解场景。<br><em>预测演化，守护安全。</em>",
+    "fullName": "交通感知与世界建模研究组",
+    "intro": "我们关注异构观测、信息缺失与不确定性条件下，如何可靠地理解交通场景，并预测其未来演化。",
+    "explore": "探索研究方向",
+    "students": "了解学生研究机会",
+    "figureLabel": "彼此连接的研究愿景",
+    "figureNote": "概念示意 · 非实测数据或实验结果",
+    "figureStages": [
+      "多源观测",
+      "场景表示",
+      "世界建模",
+      "安全分析"
+    ],
+    "motionPause": "暂停动画",
+    "motionPlay": "播放动画",
+    "researchKicker": "01 / 研究方向",
+    "researchTitle": "相互连接的研究主线，<br>多元开放的探索入口。",
+    "researchIntro": "三个核心方向，加上系统优化的特色拓展。可信性与可靠性贯穿其中。",
+    "details": "研究问题与入门课题",
+    "foundationLabel": "已有研究基础",
+    "futureLabel": "正在拓展的方向",
+    "startLabel": "可探索的学生入门课题",
+    "keywordsLabel": "方法与主题",
+    "philosophyKicker": "贯穿始终的科学问题",
+    "philosophyTitle": "我们能在多大程度上相信<br>感知与预测的结果？",
+    "philosophyIntro": "以真实交通问题为导向，连接观测质量、物理运动、场景语义与不确定性。下图表达研究路线，不代表已经建成的端到端系统。",
+    "flow": [
+      {
+        "title": "异构多源观测",
+        "body": "LiDAR · 相机 · 雷达 · 无人机 · V2X"
+      },
+      {
+        "title": "质量感知的场景表示",
+        "body": "检测 · 跟踪 · 融合 · 不确定性"
+      },
+      {
+        "title": "交通世界建模",
+        "body": "时空状态 · 主体交互 · 物理 · 语义"
+      },
+      {
+        "title": "安全分析与系统决策",
+        "body": "冲突分析 · 风险预测 · 多目标优化"
+      }
+    ],
+    "reliability": "跨方向的共同主题：观测质量、不确定性、物理一致性与评估可靠性。",
+    "publicationsKicker": "02 / 代表性成果",
+    "publicationsTitle": "从已有积累出发。",
+    "publicationsIntro": "研究组发起人的精选论文，包含在研究组形成之前完成的工作。",
+    "all": "全部成果",
+    "journal": "期刊论文",
+    "vision": "预印本 / 研究愿景",
+    "publicationLink": "阅读论文",
+    "fullList": "前往个人主页查看完整论文列表",
+    "peopleKicker": "03 / 研究成员",
+    "peopleTitle": "从一个研究愿景，<br>走向共同探索。",
+    "joinKicker": "04 / 交流与合作",
+    "joinTitle": "带着问题而来，<br>找到你的研究方向。",
+    "joinIntro": "欢迎对交通科学与人工智能交叉研究感兴趣的同学与合作者交流。",
+    "studentHeading": "面向潜在学生",
+    "collabHeading": "面向科研合作者",
+    "studentBody": "我们重视主动探索问题的能力、数学与编程基础、学术诚信，以及对真实交通问题的兴趣。交通运输、计算机、人工智能、自动化、车辆、土木、数学及相关专业，都可以找到适合的研究入口。",
+    "collabBody": "欢迎围绕多模态感知、交通参与者交互、交通安全、交通世界建模与基础设施决策展开讨论。具体合作方向将结合双方的研究兴趣与数据资源条件共同确定。",
+    "joinNotice": "欢迎科研交流。正式招生资格、招生专业、名额与指导安排，以学校政策和未来正式公告为准。本页面不代表当前已有开放名额。",
+    "contact": "通过个人主页联系交流",
+    "pathsTitle": "不同背景，都可以找到研究入口",
+    "paths": [
+      {
+        "title": "人工智能 / 计算机",
+        "body": "检测与跟踪 → 场景表示 → 交互感知预测"
+      },
+      {
+        "title": "交通运输工程",
+        "body": "轨迹与交通冲突 → 不确定性分析 → 可靠安全评估"
+      },
+      {
+        "title": "自动化 / 车辆 / 数学",
+        "body": "状态估计与动力学 → 物理约束 → 预测与优化"
+      }
+    ],
+    "footerNote": "交通感知与世界建模研究组 · TPWM Lab 为筹建阶段的工作品牌",
+    "backTop": "回到顶部",
+    "copyright": "TPWM Lab · 学术研究网站",
+    "searchLabel": "检索代表成果",
+    "searchPlaceholder": "搜索论文标题、作者或研究主题…",
+    "resultsLabel": "共 {total} 项，显示 {count} 项",
+    "noResults": "没有找到符合条件的论文。",
+    "clearSearch": "重置搜索与筛选"
+  }
+}
