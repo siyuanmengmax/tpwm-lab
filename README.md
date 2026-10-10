@@ -116,4 +116,4 @@ See [QA-REPORT.md](docs/QA-REPORT.md) for details. Screenshots from the local re
 
 ## License
 
-No open-source license has been specified for the website source. The bundled Inter fonts are distributed under the [SIL Open Font License 1.1](public/assets/fonts/Inter-LICENSE.txt). Rights to the profile photo and publication content are handled separately.
+The reusable website code is licensed under the [MIT License](LICENSE). See [NOTICE.md](NOTICE.md) for the scope: original lab text, the profile photo, and TPWM branding are excluded from the code license; linked publications retain their respective rights. The bundled Inter fonts use the [SIL Open Font License 1.1](public/assets/fonts/Inter-LICENSE.txt).
