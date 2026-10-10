@@ -1,6 +1,6 @@
 # 给本地 Codex 的交接说明
 
-目标：接管 TPWM Lab 的静态双语学术网站；保持简洁学术风格和内容真实性。当前交付的是本地预览，尚未公开发布；远程仓库已配置为 `https://github.com/siyuanmengmax/tpwm-lab.git`。
+目标：接管 TPWM Lab 的静态双语学术网站；保持简洁学术风格和内容真实性。当前网站已于 2026-10-11 经 Max 确认公开发布。远程仓库为 `https://github.com/siyuanmengmax/tpwm-lab.git`，正式网址为 `https://siyuanmengmax.github.io/tpwm-lab/`。
 
 ## 第一次接手
 
@@ -23,10 +23,10 @@
 
 ## 下一步的合理顺序
 
-本机 Chrome 基本验收已完成（2026-10-11，详见 `QA-REPORT.md`）→ Max 审核文案与待确认项 → 确定独立仓库 → 提交源码 → Max 明确批准后启用 Pages。正式 URL 确认后设置 SITE_URL，再生成 SEO 元数据。
+本机 Chrome 基本验收与首次发布已完成（2026-10-11，详见 `QA-REPORT.md` 和 `DEPLOYMENT.md`）。后续按实际研究进展更新 JSON 内容，运行构建与检查后提交；GitHub Pages 工作流保持手动触发。部署时自动使用 Pages 返回的正式 URL 生成 SEO 元数据。
 
 可在不改模板的情况下添加论文和人物。News、Projects、正式岗位仅预留数据接口，没有渲染实现；未来有真实内容再扩展。没有后端、数据库、追踪脚本或表单。
 
 ## 本地完善记录（2026-10-11）
 
-补齐 `.github/workflows/pages.yml` 与 `.gitignore`；加入论文多词检索、双语主题检索、组合筛选空状态、吸顶导航和当前区块提示。离线预览切换语言时清理旧事件监听，修复无效 URL fragment 导致的脚本异常。构建配置先校验再替换产物，过滤 macOS 元数据；静态服务器提供双语 404 和端口占用提示。部署仍需手动运行，尚未创建远程仓库或公开站点。
+补齐 `.github/workflows/pages.yml` 与 `.gitignore`；加入论文多词检索、双语主题检索、组合筛选空状态、吸顶导航和当前区块提示。离线预览切换语言时清理旧事件监听，修复无效 URL fragment 导致的脚本异常。构建配置先校验再替换产物，过滤 macOS 元数据；静态服务器提供双语 404 和端口占用提示。部署仍为手动触发。随后按 Max 的明确批准推送至已配置的独立仓库，并完成首次公开上线。

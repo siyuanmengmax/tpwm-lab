@@ -4,7 +4,7 @@
 
 简洁、可维护的中英双语静态学术网站。米白、深绿与克制的青绿色延续个人主页风格；独立 TPWM 字标、交通概念示意、研究方向展开、代表成果检索与筛选、吸顶导航与移动菜单提供研究组的独立识别。
 
-**当前状态：本地预览稿，未公开部署。** 请先看 [发布前确认清单](docs/REVIEW-CHECKLIST.md)。本项目不包含虚构成员、招生名额、经费、设备或已建成世界模型的声明。
+**当前状态：已于 2026-10-11 发布至 GitHub Pages。** [English](https://siyuanmengmax.github.io/tpwm-lab/en/) · [中文](https://siyuanmengmax.github.io/tpwm-lab/zh/)。发布记录见 [DEPLOYMENT.md](docs/DEPLOYMENT.md)，后续内容确认项见 [确认清单](docs/REVIEW-CHECKLIST.md)。本项目不包含虚构成员、招生名额、经费、设备或已建成世界模型的声明。
 
 ## 立即预览
 
@@ -71,8 +71,8 @@ docs/                  # brief、来源、发布清单、Codex 交接
 
 1. 使用上述研究组仓库；不要使用 `siyuanmengmax.github.io` 仓库作为部署目标。
 2. 将本目录完整内容提交到该新仓库。包含 `src/`、`scripts/`、`public/`、`package.json`、`.github/` 和文档；不必提交 `dist/`、`preview/`。
-3. Repository → Settings → Pages → Source 选择 **GitHub Actions**。
-4. 检查 `docs/REVIEW-CHECKLIST.md`。确认可正式发布后，手动运行 **Deploy TPWM Lab** 工作流。此操作才会公开网站。
+3. Repository → Settings → Pages → Source 已选择 **GitHub Actions**。
+4. 后续更新先检查 `docs/REVIEW-CHECKLIST.md` 并运行本地检查，再手动运行 **Deploy TPWM Lab** 工作流发布新版本。首次上线已由 Max 确认并完成。
 5. 工作流构建 `dist/` 并发布至该仓库的 Pages。所有链接和资源使用相对路径，支持 `https://USERNAME.github.io/REPOSITORY/`，无需修改资源前缀。
 6. 工作流使用 GitHub Pages 返回的站点地址生成 canonical、hreflang、Open Graph URL 与 sitemap。如需覆盖，Repository → Settings → Secrets and variables → Actions → Variables 中设置 `SITE_URL`（例如 `https://USERNAME.github.io/REPOSITORY`）。本地构建未设置地址时不会写入最终域名。
 7. 如果以后需要 push 自动部署，再自行在 workflow 的 `on:` 下增加 `push: {branches: [main]}`；本版默认仅 `workflow_dispatch`。
@@ -95,10 +95,10 @@ git push -u origin main
 
 ## 内容与素材边界
 
-研究内容来自上传 brief 与用户个人主页。引用和差异见 `docs/SOURCES.md`。SVG 是原创概念示意，无实测数据、实验指标或算法输出；I-WM 明确为预印本/愿景。照片由用户现有个人主页复用；请本人确认继续对外使用。未使用校徽、未经授权的论文插图或无人机合作项目标识。
+研究内容来自上传 brief 与用户个人主页。引用和差异见 `docs/SOURCES.md`。SVG 是原创概念示意，无实测数据、实验指标或算法输出；I-WM 明确为预印本/愿景。照片由用户现有个人主页复用，本次按 Max 批准的预览版本上线。未使用校徽、未经授权的论文插图或无人机合作项目标识。
 
 ## 验证范围
 
 构建、源文件及内嵌 JavaScript 语法、双语静态内容、52 处页面引用、相对路径与关键内容边界已检查。2026-10-11 使用本机 Chrome 完成 56 项浏览器检查，覆盖中英文页面的 320/390/768/1440px 布局、键盘交互、筛选与检索、深链接、离线预览、禁用 JavaScript 与 reduced-motion。详细记录见 [QA-REPORT.md](docs/QA-REPORT.md)，页面截图位于 `preview/screenshots/`。Safari、Firefox、真机触摸与屏幕阅读器尚未专项测试。
 
-本项目未设置开源许可证；公开仓库前由 Max 决定代码许可证，个人照片和论文内容权利单独处理。
+本项目未设置开源许可证；个人照片和论文内容权利单独处理。
