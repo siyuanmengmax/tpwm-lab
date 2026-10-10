@@ -1,18 +1,18 @@
-# TPWM Lab — Academic Website v1
+# TPWM Lab — Academic Website
 
-交通感知与世界建模研究组 / Transportation Perception & World Modeling Lab
+**Transportation Perception & World Modeling Lab**
 
-简洁、可维护的中英双语静态学术网站。米白、深绿与克制的青绿色延续个人主页风格；独立 TPWM 字标、交通概念示意、研究方向展开、代表成果检索与筛选、吸顶导航与移动菜单提供研究组的独立识别。
+交通感知与世界建模研究组
 
-**当前状态：已于 2026-10-11 发布至 GitHub Pages。** [English](https://siyuanmengmax.github.io/tpwm-lab/en/) · [中文](https://siyuanmengmax.github.io/tpwm-lab/zh/)。发布记录见 [DEPLOYMENT.md](docs/DEPLOYMENT.md)，后续内容确认项见 [确认清单](docs/REVIEW-CHECKLIST.md)。本项目不包含虚构成员、招生名额、经费、设备或已建成世界模型的声明。
+A bilingual academic website with English and Chinese pages, structured research and publication data, and a static build for GitHub Pages. The design follows [Siyuan (Max) Meng's personal website](https://siyuanmengmax.github.io/), with an independent TPWM wordmark, an original transportation concept illustration, expandable research descriptions, publication search and filters, and responsive navigation.
 
-## 立即预览
+**Live since October 11, 2026:** [English](https://siyuanmengmax.github.io/tpwm-lab/en/) · [中文](https://siyuanmengmax.github.io/tpwm-lab/zh/)
 
-直接双击 `preview/TPWM-Lab-Preview.html`：中英文切换、展开内容、论文检索与筛选、概念动画均可运行；样式、脚本和照片全部内嵌。外部论文与个人主页链接需要联网。这个文件由构建器生成，不应直接作为长期维护源文件。
+See the [deployment record](docs/DEPLOYMENT.md) and [content review checklist](docs/REVIEW-CHECKLIST.md) for release details and items awaiting confirmation. Supporting documents in `docs/` are currently in Chinese.
 
-## 本地开发
+## Local development
 
-需要 Node.js 20 或更高版本。无第三方依赖，无需 `npm install`。
+Requires **Node.js 20 or later**. There are no third-party dependencies; `npm install` is not needed.
 
 ```bash
 npm run build
@@ -20,85 +20,99 @@ npm run check
 npm run dev
 ```
 
-浏览器打开 `http://localhost:4173/`。根路径默认进入英文页面；中文首页为 `http://localhost:4173/zh/`。访问 `/en/` 与 `/zh/` 可查看独立可分享的语言路由。修改源码后重新运行 `npm run build` 并刷新浏览器。`PORT=8080 npm run dev` 可更换端口。
+Open `http://localhost:4173/`. The root redirects to the English page; `/en/` and `/zh/` provide separate, shareable language routes. After editing source files, run `npm run build` again and refresh the browser. To use another port, run `PORT=8080 npm run dev`.
 
-## 为什么采用这个结构
+## Offline preview
 
-使用 Node.js 内置能力生成静态 HTML，浏览器只加载少量原生 JavaScript。相比引入大型框架，本版没有安装依赖、服务端或数据库的维护成本。正文提前生成，即使 JavaScript 禁用仍可阅读。样式和脚本使用带内容版本号的文件名，避免更新后继续复用旧资源缓存。后续如增加独立项目页，可在构建器中复用组件与内容，不必重录数据。
+Run `npm run build`, then open `preview/TPWM-Lab-Preview.html` directly in a browser. This generated file embeds the styles, scripts, and profile photo. Language switching, expandable sections, publication search and filters, and the concept animation work offline; external publication and personal website links require an internet connection.
+
+Edit the source files rather than the generated preview. Both `preview/` and `dist/` are excluded from Git and are created by the build.
+
+## Project structure
+
+The site uses Node.js built-in modules to generate static HTML and a small amount of vanilla JavaScript for browser interactions. It requires no backend or database. Page content remains readable with JavaScript disabled. CSS and JavaScript filenames include content hashes so browsers request updated assets when a new version is published. Shared templates and content records can also support future project pages.
 
 ```text
 src/
   content/
-    site.json          # 双语页面文案、站点配置、个人主页入口
-    research.json      # 四个研究方向：已有基础 / 未来方向 / 入门题目
-    people.json        # 真实人物数据；当前仅发起人
-    publications.json  # 论文、作者、年份、类型、状态、DOI/arXiv
-    opportunities.json # 招生配置，当前未确认资格、无岗位
-    news.json          # 预留数据，当前 []
-    projects.json      # 预留数据，当前 []
+    site.json          # Bilingual copy, site settings, and personal website links
+    research.json      # Four research areas: foundations, future work, starter topics
+    people.json        # Confirmed members; currently the founding PI only
+    publications.json  # Titles, authors, years, types, statuses, and DOI/arXiv links
+    opportunities.json # Recruitment settings; no confirmed openings
+    news.json          # Reserved for future content; currently []
+    projects.json      # Reserved for future content; currently []
   components/
-    page.mjs           # 语义化页面模板
-    scene.mjs          # 原创 SVG 概念示意
+    page.mjs           # Semantic HTML templates
+    scene.mjs          # Original SVG concept illustration
 public/assets/
-  site.css             # 配色、字体、响应式布局
-  site.js              # 菜单、检索与筛选、动效、导航定位与语言切换
-  favicon.svg          # TPWM 原创字标
-  max-profile.jpg      # 用户个人主页现有照片
+  site.css             # Colors, typography, and responsive layouts
+  site.js              # Navigation, search, filters, animation, and language switching
+  favicon.svg          # Original TPWM wordmark
+  max-profile.jpg      # PI photo reused from the personal website
 scripts/
-  build.mjs            # 数据 → 静态页面 + 单文件预览
-  serve.mjs            # 仅供本地预览的静态服务器
-  check.mjs            # 内容与链接结构检查
+  build.mjs            # Content to static pages and a standalone preview
+  serve.mjs            # Static server for local previews
+  check.mjs            # Content, syntax, and link checks
 .github/workflows/
-  pages.yml            # 默认仅手动触发，不会推送即发布
-preview/               # 可直接打开的双语预览
-dist/                 # GitHub Pages 部署文件（由构建器生成）
-docs/                  # brief、来源、发布清单、Codex 交接
+  pages.yml            # GitHub Pages deployment; manually triggered
+preview/               # Generated standalone bilingual preview; not tracked
+dist/                  # Generated deployment files; not tracked
+docs/                  # Design brief, sources, review checklist, QA, and handoff notes
 ```
 
-## 更新内容
+## Updating content
 
-- **论文**：编辑 `publications.json`。`type` 支持 `journal` / `vision`。论文标题、作者和 DOI 共用一份记录；状态与分类有 en/zh 字段。添加后运行构建；筛选数量由脚本自动计算。
-- **研究方向**：编辑 `research.json`。保持 `foundation` 与 `future` 的边界；`id` 是稳定锚点，已分享后尽量不要更改。
-- **人员**：编辑 `people.json`，图片放到 `public/assets/`；添加真实成员前取得展示许可。
-- **新闻/项目**：`news.json` 与 `projects.json` 是预留空数组，当前模板不渲染。未来增加真实记录时，再在 `page.mjs` 添加对应区块，不会凭空生成内容。
-- **招生**：`opportunities.json` 是未来接口，当前不渲染岗位。正式资格确认后，更新双语公告并扩展模板；仅修改 `recruitmentConfirmed` 不会自动发布岗位。
-- **颜色与字体**：编辑 `site.css`。中文使用与个人主页一致的系统无衬线字体栈（苹方 / 微软雅黑等），标题字重为 600 / 500；英文沿用原字体。无第三方字体服务。
-- **联系**：当前所有联系入口指向个人主页；不要直接复制可能变更的旧邮箱。
+Content files are in `src/content/`. Rebuild the site after making changes.
 
-## GitHub Pages：独立仓库
+- **Publications:** Edit `publications.json`. The `type` field accepts `journal` or `vision`. Titles, authors, and DOI links share one record across languages; status and topic labels have English and Chinese fields. Filter counts update automatically.
+- **Research:** Edit `research.json`. Keep established work in `foundation` and proposed work in `future`. Preserve existing `id` values where possible, as they are used in shared deep links.
+- **People:** Edit `people.json` and place photos in `public/assets/`. Add only confirmed members with permission to display their information and images.
+- **News and projects:** `news.json` and `projects.json` are empty placeholders and are not rendered. When real records become available, add the corresponding sections to `page.mjs`.
+- **Recruitment:** `opportunities.json` reserves settings for future announcements. No openings are currently rendered. Once recruitment eligibility and positions are confirmed, add bilingual announcements and extend the templates. Changing `recruitmentConfirmed` alone does not publish an opening.
+- **Colors and typography:** Edit `public/assets/site.css`. Chinese pages use the personal website's system sans-serif font stack, including PingFang SC and Microsoft YaHei, with heading weights of 600 and 500. English pages retain their separate typography. No external font service is required.
+- **Contact:** Contact links currently point to the PI's personal website. Confirm any email address before adding it to the site.
 
-远程仓库已配置为 [siyuanmengmax/tpwm-lab](https://github.com/siyuanmengmax/tpwm-lab)，与个人主页仓库独立。
+## Deploying to GitHub Pages
 
-1. 使用上述研究组仓库；不要使用 `siyuanmengmax.github.io` 仓库作为部署目标。
-2. 将本目录完整内容提交到该新仓库。包含 `src/`、`scripts/`、`public/`、`package.json`、`.github/` 和文档；不必提交 `dist/`、`preview/`。
-3. Repository → Settings → Pages → Source 已选择 **GitHub Actions**。
-4. 后续更新先检查 `docs/REVIEW-CHECKLIST.md` 并运行本地检查，再手动运行 **Deploy TPWM Lab** 工作流发布新版本。首次上线已由 Max 确认并完成。
-5. 工作流构建 `dist/` 并发布至该仓库的 Pages。所有链接和资源使用相对路径，支持 `https://USERNAME.github.io/REPOSITORY/`，无需修改资源前缀。
-6. 工作流使用 GitHub Pages 返回的站点地址生成 canonical、hreflang、Open Graph URL 与 sitemap。如需覆盖，Repository → Settings → Secrets and variables → Actions → Variables 中设置 `SITE_URL`（例如 `https://USERNAME.github.io/REPOSITORY`）。本地构建未设置地址时不会写入最终域名。
-7. 如果以后需要 push 自动部署，再自行在 workflow 的 `on:` 下增加 `push: {branches: [main]}`；本版默认仅 `workflow_dispatch`。
+The site is published from [siyuanmengmax/tpwm-lab](https://github.com/siyuanmengmax/tpwm-lab), a repository separate from the PI's personal website. GitHub Pages is configured to use **GitHub Actions**.
 
-工作流中的 Actions 版本按官方 Pages 示例设置。若 GitHub 后续有版本更新，交给本地 Codex 检查后升级。
+1. Review the [content checklist](docs/REVIEW-CHECKLIST.md), then run `npm run build` and `npm run check`.
+2. Commit and push the source changes to this repository. Include source files, assets, scripts, configuration, and documentation; generated `dist/` and `preview/` files are excluded.
+3. In the repository's **Actions** tab, select **Deploy TPWM Lab** and choose **Run workflow** on `main`.
+4. The workflow builds and checks the site, uploads `dist/`, and deploys it to GitHub Pages.
 
-## 本地 Git 管理
+**Pushing a commit does not deploy the site.** The workflow currently uses `workflow_dispatch` only. Automatic deployment can be enabled later by adding a `push` trigger for `main` in `.github/workflows/pages.yml`.
 
-本目录已经初始化 Git，并配置了 `origin`，无需重复 `git init` 或 `git remote add`。提交前先查看修改并通过检查：
+Internal links and assets use relative paths, so the site supports a repository subpath such as `https://USERNAME.github.io/REPOSITORY/`. The workflow uses the URL returned by GitHub Pages for canonical links, hreflang links, Open Graph URLs, and the sitemap. To override it, set the repository Actions variable `SITE_URL` under **Settings → Secrets and variables → Actions → Variables**. Local builds without a configured site URL omit the final deployment domain.
+
+## Git workflow
+
+The working repository already has Git and `origin` configured. Review changes before committing:
 
 ```bash
 git status
+git diff
 npm run build && npm run check
-git add .
+git add <files-you-reviewed>
 git commit -m "Update TPWM Lab website"
-git push -u origin main
+git push origin main
 ```
 
-首次推送不会触发本项目的部署工作流。后续每次修改前用 `git status` 检查，修改后运行 `npm run build && npm run check`。
+Replace `<files-you-reviewed>` with the paths you intend to commit. To publish website changes, run the deployment workflow after pushing.
 
-## 内容与素材边界
+## Content and asset policy
 
-研究内容来自上传 brief 与用户个人主页。引用和差异见 `docs/SOURCES.md`。SVG 是原创概念示意，无实测数据、实验指标或算法输出；I-WM 明确为预印本/愿景。照片由用户现有个人主页复用，本次按 Max 批准的预览版本上线。未使用校徽、未经授权的论文插图或无人机合作项目标识。
+Research descriptions are based on the [design brief](docs/BRIEF.md) and the PI's personal website. Sources and discrepancies are documented in [SOURCES.md](docs/SOURCES.md). Established research and emerging directions are kept distinct. The site does not claim unconfirmed members, funding, equipment, recruitment openings, or a completed world-model system.
 
-## 验证范围
+The original SVG is a conceptual illustration, not experimental data or algorithm output. I-WM is labeled **Preprint / Vision**. The profile photo is reused from the PI's personal website and was approved by Max for this release. The site does not use university logos, unauthorized publication figures, or UAV collaboration branding.
 
-构建、源文件及内嵌 JavaScript 语法、双语静态内容、52 处页面引用、相对路径与关键内容边界已检查。2026-10-11 使用本机 Chrome 完成 56 项浏览器检查，覆盖中英文页面的 320/390/768/1440px 布局、键盘交互、筛选与检索、深链接、离线预览、禁用 JavaScript 与 reduced-motion。详细记录见 [QA-REPORT.md](docs/QA-REPORT.md)，页面截图位于 `preview/screenshots/`。Safari、Firefox、真机触摸与屏幕阅读器尚未专项测试。
+## Validation
 
-本项目未设置开源许可证；个人照片和论文内容权利单独处理。
+The recorded checks cover the build, source and embedded JavaScript syntax, bilingual content, 52 page references, relative paths, and key content constraints. On October 11, 2026, 56 browser checks passed in Chrome, covering both languages at widths of 320, 390, 768, and 1440 pixels, keyboard interactions, search and filters, deep links, the offline preview, disabled JavaScript, and reduced-motion preferences. Subsequent checks confirmed Chinese font rendering and asset cache invalidation.
+
+See [QA-REPORT.md](docs/QA-REPORT.md) for details. Screenshots from the local review are stored in `preview/screenshots/` and are not tracked in Git. Safari, Firefox, physical touch devices, and screen readers have not undergone dedicated testing.
+
+## License
+
+No open-source license has been specified. Rights to the profile photo and publication content are handled separately.
