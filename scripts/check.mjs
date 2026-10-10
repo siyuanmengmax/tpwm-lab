@@ -39,6 +39,8 @@ for (const lang of ['en', 'zh']) {
   assert(html.includes('Preprint / Vision') || html.includes('预印本 / 研究愿景'));
   assert(!html.includes('mailto:'));
   assert(!html.includes('Assistant Professor'));
+  assert(!html.includes('href="../assets/site.css"'), 'Stylesheets must use a versioned URL to bypass stale caches.');
+  assert(!html.includes('src="../assets/site.js"'), 'Scripts must use a versioned URL to bypass stale caches.');
 }
 assert.equal(areas.filter(area => area.kind === 'core').length, 3);
 assert.equal(areas.filter(area => area.kind === 'extension').length, 1);

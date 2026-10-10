@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { page, esc } from '../src/components/page.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -31,6 +32,18 @@ await fs.mkdir(dist, { recursive: true });
 await fs.cp(path.join(root, 'public'), dist, { recursive: true, filter: source => path.basename(source) !== '.DS_Store' });
 await fs.writeFile(path.join(dist, '.nojekyll'), '');
 
+// A changed asset gets a new URL, so a browser cannot reuse an older release.
+// Keep the original filenames available for previously cached HTML documents.
+const assets = {};
+for (const name of ['site.css', 'site.js']) {
+  const source = await fs.readFile(path.join(dist, 'assets', name), 'utf8');
+  const hash = createHash('sha256').update(source).digest('hex').slice(0, 12);
+  const extension = path.extname(name);
+  const filename = `${path.basename(name, extension)}.${hash}${extension}`;
+  await fs.writeFile(path.join(dist, 'assets', filename), source);
+  assets[name] = { filename, source };
+}
+
 for (const lang of languages) {
   const t = site[lang];
   await fs.mkdir(path.join(dist, lang), { recursive: true });
@@ -49,8 +62,8 @@ for (const lang of languages) {
 <meta property="og:locale" content="${lang === 'zh' ? 'zh_CN' : 'en_US'}">
 ${canonical(lang)}
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/site.css">
-<script src="../assets/site.js" defer></script>
+<link rel="stylesheet" href="../assets/${assets['site.css'].filename}">
+<script src="../assets/${assets['site.js'].filename}" defer></script>
 </head>
 <body class="lang-${lang}">${page(data, lang)}</body>
 </html>`);
@@ -73,8 +86,8 @@ if (origin) {
 }
 
 // A file:// preview keeps content readable without JavaScript or a local server.
-const css = await fs.readFile(path.join(dist, 'assets/site.css'), 'utf8');
-const js = await fs.readFile(path.join(dist, 'assets/site.js'), 'utf8');
+const css = assets['site.css'].source;
+const js = assets['site.js'].source;
 const favicon = await fs.readFile(path.join(dist, 'assets/favicon.svg'));
 const photos = await Promise.all(people.map(async person => [person.image, (await fs.readFile(path.join(dist, 'assets', person.image))).toString('base64')]));
 const pages = Object.fromEntries(languages.map(lang => {
