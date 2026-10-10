@@ -18,3 +18,5 @@
 没有使用校徽、第三方摄影图库、未经授权的论文插图、学生照片或合作机构标识。无 Dr. Christofa / NEUTC 项目署名、基金获批或无人机数据授权的公开断言。
 
 2026-10-11 补齐部署工作流时复核了 [GitHub Pages 官方说明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) 与 [setup-node 官方仓库](https://github.com/actions/setup-node)。工作流保持 `workflow_dispatch` 手动触发，使用 Pages 返回的真实站点地址生成 SEO 元数据。
+
+中文字体于 2026-10-11 按个人主页的 [chinese-typography.css](https://github.com/siyuanmengmax/siyuanmengmax.github.io/blob/main/assets/css/chinese-typography.css) 与 [portfolio.css](https://github.com/siyuanmengmax/siyuanmengmax.github.io/blob/main/assets/portfolio/portfolio.css) 对齐：使用同一系统无衬线字体栈，中文主标题字重 600，章节标题字重 500。
