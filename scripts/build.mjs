@@ -62,6 +62,7 @@ for (const lang of languages) {
 <meta property="og:locale" content="${lang === 'zh' ? 'zh_CN' : 'en_US'}">
 ${canonical(lang)}
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+${lang === 'en' ? '<link rel="preload" href="../assets/fonts/InterVariable-4.1.woff2" as="font" type="font/woff2" crossorigin>' : ''}
 <link rel="stylesheet" href="../assets/${assets['site.css'].filename}">
 <script src="../assets/${assets['site.js'].filename}" defer></script>
 </head>
@@ -86,7 +87,15 @@ if (origin) {
 }
 
 // A file:// preview keeps content readable without JavaScript or a local server.
-const css = assets['site.css'].source;
+let css = assets['site.css'].source;
+// Embed local fonts as well, so the standalone preview keeps its typography offline.
+const fontPaths = [...new Set([...css.matchAll(/url\("(fonts\/[^"\n]+\.woff2)"\)/g)].map(match => match[1]))];
+for (const fontPath of fontPaths) {
+  const font = await fs.readFile(path.join(dist, 'assets', fontPath));
+  css = css.replaceAll(`url("${fontPath}")`, `url("data:font/woff2;base64,${font.toString('base64')}")`);
+}
+const fontLicense = await fs.readFile(path.join(dist, 'assets/fonts/Inter-LICENSE.txt'), 'utf8');
+css = `/* Bundled Inter font license:\n${fontLicense.replaceAll('*/', '* /')}\n*/\n${css}`;
 const js = assets['site.js'].source;
 const favicon = await fs.readFile(path.join(dist, 'assets/favicon.svg'));
 const photos = await Promise.all(people.map(async person => [person.image, (await fs.readFile(path.join(dist, 'assets', person.image))).toString('base64')]));

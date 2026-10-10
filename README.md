@@ -24,7 +24,7 @@ Open `http://localhost:4173/`. The root redirects to the English page; `/en/` an
 
 ## Offline preview
 
-Run `npm run build`, then open `preview/TPWM-Lab-Preview.html` directly in a browser. This generated file embeds the styles, scripts, and profile photo. Language switching, expandable sections, publication search and filters, and the concept animation work offline; external publication and personal website links require an internet connection.
+Run `npm run build`, then open `preview/TPWM-Lab-Preview.html` directly in a browser. This generated file embeds the styles, scripts, fonts, and profile photo. Language switching, expandable sections, publication search and filters, and the concept animation work offline; external publication and personal website links require an internet connection.
 
 Edit the source files rather than the generated preview. Both `preview/` and `dist/` are excluded from Git and are created by the build.
 
@@ -47,6 +47,7 @@ src/
     scene.mjs          # Original SVG concept illustration
 public/assets/
   site.css             # Colors, typography, and responsive layouts
+  fonts/               # Self-hosted Inter variable fonts and their license
   site.js              # Navigation, search, filters, animation, and language switching
   favicon.svg          # Original TPWM wordmark
   max-profile.jpg      # PI photo reused from the personal website
@@ -70,7 +71,7 @@ Content files are in `src/content/`. Rebuild the site after making changes.
 - **People:** Edit `people.json` and place photos in `public/assets/`. Add only confirmed members with permission to display their information and images.
 - **News and projects:** `news.json` and `projects.json` are empty placeholders and are not rendered. When real records become available, add the corresponding sections to `page.mjs`.
 - **Recruitment:** `opportunities.json` reserves settings for future announcements. No openings are currently rendered. Once recruitment eligibility and positions are confirmed, add bilingual announcements and extend the templates. Changing `recruitmentConfirmed` alone does not publish an opening.
-- **Colors and typography:** Edit `public/assets/site.css`. Chinese pages use the personal website's system sans-serif font stack, including PingFang SC and Microsoft YaHei, with heading weights of 600 and 500. English pages retain their separate typography. No external font service is required.
+- **Colors and typography:** Edit `public/assets/site.css`. English headings and body text use self-hosted Inter 4.1, including its italic variant. Chinese pages use the personal website's system sans-serif font stack, including PingFang SC and Microsoft YaHei, with heading weights of 600 and 500. No external font service is required.
 - **Contact:** Contact links currently point to the PI's personal website. Confirm any email address before adding it to the site.
 
 ## Deploying to GitHub Pages
@@ -115,4 +116,4 @@ See [QA-REPORT.md](docs/QA-REPORT.md) for details. Screenshots from the local re
 
 ## License
 
-No open-source license has been specified. Rights to the profile photo and publication content are handled separately.
+No open-source license has been specified for the website source. The bundled Inter fonts are distributed under the [SIL Open Font License 1.1](public/assets/fonts/Inter-LICENSE.txt). Rights to the profile photo and publication content are handled separately.

@@ -20,3 +20,5 @@
 2026-10-11 补齐部署工作流时复核了 [GitHub Pages 官方说明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) 与 [setup-node 官方仓库](https://github.com/actions/setup-node)。工作流保持 `workflow_dispatch` 手动触发，使用 Pages 返回的真实站点地址生成 SEO 元数据。
 
 中文字体于 2026-10-11 按个人主页的 [chinese-typography.css](https://github.com/siyuanmengmax/siyuanmengmax.github.io/blob/main/assets/css/chinese-typography.css) 与 [portfolio.css](https://github.com/siyuanmengmax/siyuanmengmax.github.io/blob/main/assets/portfolio/portfolio.css) 对齐：使用同一系统无衬线字体栈，中文主标题字重 600，章节标题字重 500。
+
+英文字体于 2026-10-11 更换为 [Inter](https://rsms.me/inter/)。正体和斜体变量字体来自官方仓库固定版本 [v4.1](https://github.com/rsms/inter/tree/v4.1/docs/font-files)，未经修改，以 WOFF2 格式存放在 `public/assets/fonts/`。随附官方 [SIL Open Font License 1.1](../public/assets/fonts/Inter-LICENSE.txt)；单文件离线预览同时嵌入字体及许可证。页面从本站加载字体，不调用外部字体服务；中文保留个人主页的系统字体栈。

@@ -81,6 +81,40 @@ html:not(.js) .motion-control { display: none; }
   .publication-tools, .publication-empty { display: none; }
 }
 
+/* Self-hosted Inter 4.1. License: assets/fonts/Inter-LICENSE.txt. */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterVariable-4.1.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterVariable-Italic-4.1.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+.lang-en {
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --serif: var(--sans);
+  font-optical-sizing: auto;
+}
+.lang-en :is(h1, h2) {
+  font-weight: 550;
+  letter-spacing: -.035em;
+}
+.lang-en h1 em { font-weight: inherit; }
+.lang-en h3 { font-weight: 500; }
+.lang-en .people-layout h2 br { display: initial; }
+.lang-en .scene text { font-family: var(--sans); }
+@media (max-width: 390px) {
+  .lang-en .header-inner { gap: 10px; }
+  .lang-en .wordmark { font-size: 19px; gap: 6px; }
+  .lang-en .flow { grid-template-columns: 1fr; }
+}
+
 /* Match the PI website's assets/css/chinese-typography.css. */
 html[lang="zh-CN"] {
   --font-zh: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
