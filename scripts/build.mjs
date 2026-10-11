@@ -7,7 +7,8 @@ import { page, esc } from '../src/components/page.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = async name => JSON.parse(await fs.readFile(path.join(root, 'src/content', `${name}.json`), 'utf8'));
 const [site, research, people, publications] = await Promise.all(['site', 'research', 'people', 'publications'].map(read));
-const data = { site, research, people, publications };
+const brandSvg = (await fs.readFile(path.join(root, 'public/assets/favicon.svg'), 'utf8')).trim();
+const data = { site, research, people, publications, brandSvg };
 const languages = ['en', 'zh'];
 if (!languages.includes(site.defaultLanguage)) throw new Error('defaultLanguage must be en or zh.');
 
@@ -35,7 +36,7 @@ await fs.writeFile(path.join(dist, '.nojekyll'), '');
 // A changed asset gets a new URL, so a browser cannot reuse an older release.
 // Keep the original filenames available for previously cached HTML documents.
 const assets = {};
-for (const name of ['site.css', 'site.js']) {
+for (const name of ['site.css', 'site.js', 'favicon.svg']) {
   const source = await fs.readFile(path.join(dist, 'assets', name), 'utf8');
   const hash = createHash('sha256').update(source).digest('hex').slice(0, 12);
   const extension = path.extname(name);
@@ -61,7 +62,7 @@ for (const lang of languages) {
 <meta property="og:site_name" content="TPWM Lab">
 <meta property="og:locale" content="${lang === 'zh' ? 'zh_CN' : 'en_US'}">
 ${canonical(lang)}
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/${assets['favicon.svg'].filename}" type="image/svg+xml">
 ${lang === 'en' ? '<link rel="preload" href="../assets/fonts/InterVariable-4.1.woff2" as="font" type="font/woff2" crossorigin>' : ''}
 <link rel="stylesheet" href="../assets/${assets['site.css'].filename}">
 <script src="../assets/${assets['site.js'].filename}" defer></script>
