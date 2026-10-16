@@ -2,12 +2,14 @@
 
 原始核对日期：2026-10-10。2026-10-11 再次读取个人主页，所选论文作者、链接及 FRGB3D 的 Accepted 状态与现有数据一致；未更改任职与招生信息。
 
+2026-10-16：Max 确认 FRGB3D 正式上线并提供出版社 BibTeX。本站据此更新为已发表，正式引用为 2027 年、41 卷 1 期、文章编号 04026129；修正 DOI 为 `10.1061/JCCEE5.CPENG-7710`，作者姓名为 Pravar Parashar。引用年份沿用正式卷期的 2027 年；本次确认日期不作为线上首发日期。出版社页面在当前检索工具中仍无法读取，本次更新依据为作者提供的正式书目信息，替代初始 brief 和个人主页中的旧记录。
+
 | 内容 | 来源 | 处理 |
 |---|---|---|
 | 研究定位、四方向、双语说明、研究边界 | 用户上传 TPWM Lab Website Brief v1.0（同目录 BRIEF.md） | 作为首要文案依据，已有基础与拓展分开 |
 | 姓名、博士背景、代表论文作者/年份/链接 | https://siyuanmengmax.github.io/ | 读取公开页面并核对；未复制全部投稿信息 |
 | MulDet3D | https://doi.org/10.1061/JTEPBS.TEENG-9741 | DOI 与个人主页、brief 一致；出版社链接在当前检索工具中未能读取 |
-| FRGB3D | https://doi.org/10.1061/JCCEE5/CPENG-7710 | 个人主页为 Accepted；未能独立获取出版社最终卷期信息，保留待核实标记 |
+| FRGB3D | Max 于 2026-10-16 提供的出版社 BibTeX；https://doi.org/10.1061/JCCEE5.CPENG-7710 | 已发表；2027, 41(1), 04026129；作者、DOI 与正式卷期按所提供信息更新 |
 | Road asset management | https://doi.org/10.1177/03611981261441294 | DOI 与个人主页、brief 一致 |
 | I-WM | https://arxiv.org/abs/2604.17651 | arXiv 页面核实作者为 Siyuan Meng / Chengbo Ai，标明 vision paper；本站标注 Preprint / Vision |
 | 学院英文名 | brief；https://qcyjt.wust.edu.cn/English.htm | 该英文页当前返回维护页面；沿用 brief 的名称并列入确认清单 |

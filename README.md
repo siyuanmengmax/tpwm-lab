@@ -66,7 +66,7 @@ docs/                  # Design brief, sources, review checklist, QA, and handof
 
 Content files are in `src/content/`. Rebuild the site after making changes.
 
-- **Publications:** Edit `publications.json`. The `type` field accepts `journal` or `vision`. Titles, authors, and DOI links share one record across languages; status and topic labels have English and Chinese fields. Filter counts update automatically.
+- **Publications:** Edit `publications.json`. The `type` field accepts `journal` or `vision`. Titles, authors, and DOI links share one record across languages; status and topic labels have English and Chinese fields. Use the citation year for `year`; optional `volume`, `issue`, and `articleNumber` fields appear after the venue. Keep article numbers as strings to preserve leading zeros. Filter counts update automatically.
 - **Research:** Edit `research.json`. Keep established work in `foundation` and proposed work in `future`. Preserve existing `id` values where possible, as they are used in shared deep links.
 - **People:** Edit `people.json` and place photos in `public/assets/`. Add only confirmed members with permission to display their information and images.
 - **News and projects:** `news.json` and `projects.json` are empty placeholders and are not rendered. When real records become available, add the corresponding sections to `page.mjs`.
