@@ -2,6 +2,7 @@
 node_modules/
 dist/
 preview/
+local/cv/
 .env
 .env.*
 !.env.example

@@ -3,7 +3,7 @@
   "personalWebsite": "https://siyuanmengmax.github.io/",
   "siteUrl": "",
   "defaultLanguage": "en",
-  "contentReviewed": "2026-10-10",
+  "contentReviewed": "2026-10-18",
   "en": {
     "title": "TPWM Lab — Transportation Perception & World Modeling",
     "description": "Transportation-centered research in trustworthy multimodal perception, world modeling, traffic safety, and infrastructure optimization.",
@@ -79,9 +79,9 @@
     "studentHeading": "For prospective students",
     "collabHeading": "For collaborators",
     "studentBody": "Curiosity, quantitative and programming foundations, research integrity, and an interest in real transportation challenges matter. A background in transportation, computer science, AI, automation, vehicle engineering, civil engineering, or mathematics can offer a starting point.",
-    "collabBody": "We are interested in multimodal sensing, road-user interactions, traffic safety, transportation world modeling, and infrastructure decisions. Shared questions and the available data will shape each collaboration.",
+    "collabBody": "We are interested in multimodal sensing, road-user interactions, traffic safety, infrastructure-centric world models, EV routing and charging, and infrastructure asset management. Shared questions and the available data will shape each collaboration.",
     "joinNotice": "Research inquiries are welcome. Recruitment eligibility, degree programs, positions, and supervision arrangements are subject to university policies and future official announcements. No current opening is advertised here.",
-    "contact": "Connect via the PI website",
+    "contact": "Email for research inquiries",
     "pathsTitle": "Possible paths into the research",
     "paths": [
       {
@@ -94,7 +94,7 @@
       },
       {
         "title": "Automation, vehicles & mathematics",
-        "body": "State estimation and dynamics → physical constraints → prediction and optimization"
+        "body": "State estimation and dynamics → robust control → EV routing and charging optimization"
       }
     ],
     "footerNote": "Transportation Perception & World Modeling Lab · Working research-group identity",
@@ -181,9 +181,9 @@
     "studentHeading": "面向潜在学生",
     "collabHeading": "面向科研合作者",
     "studentBody": "我们重视主动探索问题的能力、数学与编程基础、学术诚信，以及对真实交通问题的兴趣。交通运输、计算机、人工智能、自动化、车辆、土木、数学及相关专业，都可以找到适合的研究入口。",
-    "collabBody": "欢迎围绕多模态感知、交通参与者交互、交通安全、交通世界建模与基础设施决策展开讨论。具体合作方向将结合双方的研究兴趣与数据资源条件共同确定。",
+    "collabBody": "我们关注多模态感知、交通参与者交互、交通安全、以基础设施为中心的世界模型、电动汽车路径与充电调度，以及基础设施资产管理。具体合作方向以共同问题与数据条件为基础确定。",
     "joinNotice": "欢迎科研交流。正式招生资格、招生专业、名额与指导安排，以学校政策和未来正式公告为准。本页面不代表当前已有开放名额。",
-    "contact": "通过个人主页联系交流",
+    "contact": "邮件交流科研想法",
     "pathsTitle": "不同背景，都可以找到研究入口",
     "paths": [
       {
@@ -196,7 +196,7 @@
       },
       {
         "title": "自动化 / 车辆 / 数学",
-        "body": "状态估计与动力学 → 物理约束 → 预测与优化"
+        "body": "状态估计与动力学 → 鲁棒控制 → 电动汽车路径与充电优化"
       }
     ],
     "footerNote": "交通感知与世界建模研究组 · TPWM Lab 为筹建阶段的工作品牌",

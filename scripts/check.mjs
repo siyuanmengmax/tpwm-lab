@@ -10,6 +10,9 @@ const dist = path.join(root, 'dist');
 const read = name => fs.readFile(path.join(dist, name), 'utf8');
 const content = async name => JSON.parse(await fs.readFile(path.join(root, 'src/content', `${name}.json`)));
 const [people, publications, areas] = await Promise.all(['people', 'publications', 'research'].map(content));
+const opportunities = await content('opportunities');
+const contactEmail = opportunities.contactMode === 'email' ? opportunities.email : null;
+if (opportunities.contactMode === 'email') assert(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail), 'An email contact needs a valid address.');
 let references = 0;
 for (const lang of ['en', 'zh']) {
   const file = `${lang}/index.html`;
@@ -25,6 +28,9 @@ for (const lang of ['en', 'zh']) {
     const value = match[1];
     if (value.startsWith('#')) {
       assert(ids.includes(value.slice(1)), `${file}: missing anchor ${value}`);
+    } else if (value.startsWith('mailto:')) {
+      assert(contactEmail, `${file}: email contact is not configured`);
+      assert.equal(value, `mailto:${contactEmail}`, `${file}: contact address differs from configuration`);
     } else if (/^https:\/\//.test(value)) {
       new URL(value.replaceAll('&amp;', '&'));
     } else {
@@ -37,8 +43,7 @@ for (const lang of ['en', 'zh']) {
   }
   assert(html.includes('aria-expanded="false"'));
   assert(html.includes('Preprint / Vision') || html.includes('预印本 / 研究愿景'));
-  assert(!html.includes('mailto:'));
-  assert(!html.includes('Assistant Professor'));
+  if (contactEmail) assert(html.includes(`href="mailto:${contactEmail}"`), `${file}: missing email contact`);
   assert(!html.includes('href="../assets/site.css"'), 'Stylesheets must use a versioned URL to bypass stale caches.');
   assert(!html.includes('src="../assets/site.js"'), 'Scripts must use a versioned URL to bypass stale caches.');
 }

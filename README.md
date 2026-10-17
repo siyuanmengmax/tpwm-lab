@@ -39,7 +39,7 @@ src/
     research.json      # Four research areas: foundations, future work, starter topics
     people.json        # Confirmed members; currently the founding PI only
     publications.json  # Titles, authors, years, types, statuses, and DOI/arXiv links
-    opportunities.json # Recruitment settings; no confirmed openings
+    opportunities.json # Contact email and recruitment settings; no confirmed openings
     news.json          # Reserved for future content; currently []
     projects.json      # Reserved for future content; currently []
   components/
@@ -59,6 +59,7 @@ scripts/
   pages.yml            # GitHub Pages deployment; manually triggered
 preview/               # Generated standalone bilingual preview; not tracked
 dist/                  # Generated deployment files; not tracked
+local/cv/              # Private CV reference files; not tracked or published
 docs/                  # Design brief, sources, review checklist, QA, and handoff notes
 ```
 
@@ -70,9 +71,10 @@ Content files are in `src/content/`. Rebuild the site after making changes.
 - **Research:** Edit `research.json`. Keep established work in `foundation` and proposed work in `future`. Preserve existing `id` values where possible, as they are used in shared deep links.
 - **People:** Edit `people.json` and place photos in `public/assets/`. Add only confirmed members with permission to display their information and images.
 - **News and projects:** `news.json` and `projects.json` are empty placeholders and are not rendered. When real records become available, add the corresponding sections to `page.mjs`.
-- **Recruitment:** `opportunities.json` reserves settings for future announcements. No openings are currently rendered. Once recruitment eligibility and positions are confirmed, add bilingual announcements and extend the templates. Changing `recruitmentConfirmed` alone does not publish an opening.
+- **Recruitment:** `opportunities.json` stores the contact mode and email and reserves settings for future announcements. No openings are currently rendered. Once recruitment eligibility and positions are confirmed, add bilingual announcements and extend the templates. Changing `recruitmentConfirmed` alone does not publish an opening.
 - **Colors and typography:** Edit `public/assets/site.css`. English headings and body text use self-hosted Inter 4.1, including its italic variant. Chinese pages use the personal website's system sans-serif font stack, including PingFang SC and Microsoft YaHei, with heading weights of 600 and 500. No external font service is required.
-- **Contact:** Contact links currently point to the PI's personal website. Confirm any email address before adding it to the site.
+- **Contact:** The research-inquiry button uses the email in `opportunities.json`, taken from the PI's October 18, 2026 CV. The address is also displayed as text. The profile link continues to open the PI's personal website.
+- **CV references:** Keep local CV source files in `local/cv/`, which is excluded from Git and the published site. `dist/` is regenerated from scratch on every build; do not store original documents there. The CV files originally supplied in `dist/cv/` on October 18, 2026 have been preserved in `local/cv/`.
 
 ## Deploying to GitHub Pages
 

@@ -6,9 +6,9 @@ import { page, esc } from '../src/components/page.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = async name => JSON.parse(await fs.readFile(path.join(root, 'src/content', `${name}.json`), 'utf8'));
-const [site, research, people, publications] = await Promise.all(['site', 'research', 'people', 'publications'].map(read));
+const [site, research, people, publications, opportunities] = await Promise.all(['site', 'research', 'people', 'publications', 'opportunities'].map(read));
 const brandSvg = (await fs.readFile(path.join(root, 'public/assets/favicon.svg'), 'utf8')).trim();
-const data = { site, research, people, publications, brandSvg };
+const data = { site, research, people, publications, opportunities, brandSvg };
 const languages = ['en', 'zh'];
 if (!languages.includes(site.defaultLanguage)) throw new Error('defaultLanguage must be en or zh.');
 

@@ -24,3 +24,15 @@
 中文字体于 2026-10-11 按个人主页的 [chinese-typography.css](https://github.com/siyuanmengmax/siyuanmengmax.github.io/blob/main/assets/css/chinese-typography.css) 与 [portfolio.css](https://github.com/siyuanmengmax/siyuanmengmax.github.io/blob/main/assets/portfolio/portfolio.css) 对齐：使用同一系统无衬线字体栈，中文主标题字重 600，章节标题字重 500。
 
 英文字体于 2026-10-11 更换为 [Inter](https://rsms.me/inter/)。正体和斜体变量字体来自官方仓库固定版本 [v4.1](https://github.com/rsms/inter/tree/v4.1/docs/font-files)，未经修改，以 WOFF2 格式存放在 `public/assets/fonts/`。随附官方 [SIL Open Font License 1.1](../public/assets/fonts/Inter-LICENSE.txt)；单文件离线预览同时嵌入字体及许可证。页面从本站加载字体，不调用外部字体服务；中文保留个人主页的系统字体栈。
+
+## 新版简历同步（2026-10-18）
+
+本次以 Max 提供的 `dist/cv/cv_zh.tex` 为主要依据，配套 `cv_en.tex` 用于核对英文书目与链接。两份原件已逐字节校验并保存在 `local/cv/`，该目录被 Git 忽略且不进入网站产物。`dist/` 会在构建时清空，因此后续简历更新应使用 `local/cv/`。
+
+- **身份与联系方式：** 中文采用「特聘副教授（青年百人）」；英文简历列 Assistant Professor，Max 在本次对话中明确确认英文沿用这一名称。学院英文名称按英文简历采用 School of Automotive and Transportation Engineering。两份简历均写 2026 年 11 月起任，本次日期尚为 2026-10-18，网站保留拟入职 / Incoming，不将未来任职写为已发生事实。联系邮箱采用两份简历共同提供的 `siyuan_meng_max@163.com`。
+- **研究内容：** 补充无监督三维检测、鲁棒多点跟踪、相机–LiDAR 标定漂移与着色误差、跟踪质量与冲突可检测性、电动汽车充电站选择与路径—充电调度、不确定性条件下的路网养护。保留三个核心方向与一个系统优化拓展方向；I-WM 继续作为研究愿景。
+- **已有书目：** MulDet3D 补齐 152(10), 04026100；综合道路资产管理论文补充文章编号 03611981261441294，不把英文简历中的 0(0) 占位卷期写到网站。FRGB3D 沿用此前确认的 2027, 41(1), 04026129。
+- **新增代表论文：** 2023 年路段分组论文的作者全名、29(1), 04022047 和 DOI 与[作者论文列表](https://siyuanmengmax.github.io/publications/)及[出版社条目](https://ascelibrary.com/doi/10.1061/JITSE4.ISENG-2175)核对。2024 年路网养护不确定性论文按[出版社页面](https://www.tandfonline.com/doi/abs/10.1080/10298436.2024.2340001)补全题名末尾的 “using chance-constrained programming”，作者为 Rui Cao、Siyuan Meng、Shengkai Feng、Shi Dong、Qiang Bai，25(1), 2340001。
+- **来源差异：** 中文简历中的车辆冲突稿件列 Transportation Research Part C，英文简历仍列 Accident Analysis & Prevention。网站不展示该稿件的投稿期刊或审稿状态，只吸收对应研究主题。期刊分区、手机号、推荐人信息和完整简历文件未加入网站。
+
+本次直接读取部分 DOI 入口受限；上述新增书目的网页核对使用出版社检索结果及作者公开书目，未将访问限制解释为论文或 DOI 无效。简历事实优先于较早的个人主页信息。
