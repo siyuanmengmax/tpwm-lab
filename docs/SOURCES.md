@@ -40,3 +40,5 @@
 2026-10-18 后续措辞确认：Max 要求英文页面不出现「青年百人」或相关英文描述，当前英文任职说明已经符合该要求；中文个人简介中的校名改为「麻省大学阿默斯特分校 (UMass Amherst)」。中文职称仍沿用此前确认的「特聘副教授（青年百人）」。
 
 2026-10-18 任职展示调整：Max 进一步明确要求中英文网站去掉即将担任、拟入职、Incoming 等表述，直接展示武汉科技大学的正式任职信息。网站简介据此仅列学校、学院与职称，不展示入职时间。该决定替代本页上文记录的初次发布措辞；简历中的工作起始月份仍为 2026-11，原始简历及日期未修改。
+
+2026-10-19 博士学位措辞：依据 Max 提供的成绩单文字，学位为 Doctor of Philosophy，专业（Major）为 Civil Engineering (PhD)，方向（Concentration）为 Transportation Engineering。中文简介采用「博士学位（Ph.D.），专业方向为交通运输工程」；英文采用「Ph.D. in Civil Engineering, with a concentration in Transportation Engineering」，明确专业与方向。毕业时间继续按月展示为 2026 年 9 月。Max 已确认这版中英文表述并授权发布。
